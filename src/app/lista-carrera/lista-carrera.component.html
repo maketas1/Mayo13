@@ -1,0 +1,26 @@
+<h1>Carreras</h1>
+<table>
+  <caption>
+    Lista de carreras
+  </caption>
+  <tr>
+    <th>ID carrera</th>
+    <th>Nombre carrera</th>
+    <th>Fecha</th>
+    <th>Ubicacion</th>
+    <th>Cantridad vueltas</th>
+  </tr>
+  @for(elemento of carrera;track elemento){
+    <tr>
+        <td>{{ elemento.id_carrera }}</td>
+        <td>{{ elemento.nombre_carrera }}</td>
+        <td>{{ elemento.fecha }}</td>
+        <td>{{ elemento.ubicacion }}</td>
+        <td>{{ elemento.cantridad_vueltas }}</td>
+        <td><button type="button" [routerLink]="['edicion',elemento.id_carrera]">Modificar</button></td>
+        <td><button type="button" (click)="eliminar(elemento.id_carrera)">Eliminar</button></td>
+    </tr>
+  }
+</table>
+<button routerLink="alta">Alta de una nueva carrera</button>
+<router-outlet></router-outlet>

@@ -1,0 +1,30 @@
+<h1>carrera</h1>
+
+<div>
+   <form [formGroup]="form" #frmcarrera="ngForm" (ngSubmit)="operar()">
+    
+        @if(edicion){
+            <label for="">ID Carrera</label>
+             <input placeholder="ID Carrera" [readOnly]="true" 
+             formControlName="id_carrera">
+        }@else {
+            <label for="">ID Carrera</label>
+             <input placeholder="ID Carrera" required formControlName="id_carrera">
+        }
+        <label for="">Nombre carrera</label>
+        <input placeholder="Nombre carrera" required formControlName="nombre_carrera">
+        <label for="">Fecha</label>
+        <input placeholder="Fecha" required formControlName="fecha">
+        <label for="">Ubicacion</label>
+        <input placeholder="Ubicacion" required formControlName="ubicacion">
+        <label for="">Cantridad vueltas</label>
+        <input placeholder="Cantridad vueltas" required formControlName="cantridad_vueltas">
+       
+        <button type="submit" [disabled]="frmcarrera.invalid">Aceptar</button>
+        <button type="button" routerLink=""  >Cancelar</button>
+
+    </form>
+
+   
+
+</div>
